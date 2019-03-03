@@ -1,14 +1,14 @@
 #include "main.h"
 #include <string>
 
-#ifndef BALL_H
-#define BALL_H
+#ifndef ARROW_H
+#define ARROW_H
 
 
-class Ball {
+class Arrow {
 public:
-    Ball() {}
-    Ball(float x, float y);
+    Arrow() {}
+    Arrow(float x, float y, float z);
     glm::vec3 position;
     float rotation;
     float rot_yaw;
@@ -17,19 +17,16 @@ public:
     void roll(float rot);
     void yaw (float rot);
     void pitch(float rot);
-    void draw(glm::mat4 VP);
+    void draw(glm::mat4 VP, glm::vec3 pos, glm::vec3 direction_vector);
     void set_position(float x, float y, float z);
     void tick();
     int control;
-    int barrel_roll;
-    int loop;
     double speed;
     double fuel;
     double axis_speed;
     glm::mat4 Iden;
 private:
     VAO *object;
-    VAO *object1;
     VAO *object2;
     VAO *object3;
 };

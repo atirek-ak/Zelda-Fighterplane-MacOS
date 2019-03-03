@@ -19,7 +19,6 @@ using namespace std;
 /* Nothing to Edit here */
 GLFWwindow*initGLFW(int width, int height) {
     GLFWwindow *window; // window desciptor/handle
-
     glfwSetErrorCallback(error_callback);
     if (!glfwInit()) {
         // exit(EXIT_FAILURE);
@@ -65,6 +64,7 @@ GLFWwindow*initGLFW(int width, int height) {
     /* Register function to handle mouse click */
     glfwSetMouseButtonCallback(window, mouseButton); // mouse button clicks
     glfwSetScrollCallback(window, scroll_callback);
+    glfwSetCursorPosCallback(window, cursor_pos_callback);
 
     return window;
 }

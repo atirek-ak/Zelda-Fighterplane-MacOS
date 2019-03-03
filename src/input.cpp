@@ -52,8 +52,7 @@ void keyboard(GLFWwindow *window, int key, int scancode, int action, int mods) {
 /* Executed for character input (like in text boxes) */
 void keyboardChar(GLFWwindow *window, unsigned int key) {
     switch (key) {
-    case 'Q':
-    case 'q':
+    case '`':
         quit(window);
         break;
     default:
@@ -80,6 +79,16 @@ void mouseButton(GLFWwindow *window, int button, int action, int mods) {
     default:
         break;
     }
+}
+
+void cursor_pos_callback(GLFWwindow* window, double xpos, double ypos){
+    if(camera_view != "helicopter")
+    {
+        ini_cur_x = xpos-500;
+        ini_cur_y = ypos-500;
+    }
+    mouse_x_rad = ((xpos-500-ini_cur_x)/1000)*(2*M_PI);
+    mouse_y_rad = ((ypos-500-ini_cur_y)/1000)*(2*M_PI);
 }
 
 void scroll_callback(GLFWwindow *window, double xoffset, double yoffset) {

@@ -1,14 +1,14 @@
 #include "main.h"
 #include <string>
 
-#ifndef BALL_H
-#define BALL_H
+#ifndef PARACHUTE_H
+#define PARACHUTE_H
 
 
-class Ball {
+class Parachute {
 public:
-    Ball() {}
-    Ball(float x, float y);
+    Parachute() {}
+    Parachute(float x, float y, float z);
     glm::vec3 position;
     float rotation;
     float rot_yaw;
@@ -21,17 +21,13 @@ public:
     void set_position(float x, float y, float z);
     void tick();
     int control;
-    int barrel_roll;
-    int loop;
     double speed;
     double fuel;
     double axis_speed;
     glm::mat4 Iden;
 private:
     VAO *object;
-    VAO *object1;
     VAO *object2;
-    VAO *object3;
 };
 
 #endif // BALL_H

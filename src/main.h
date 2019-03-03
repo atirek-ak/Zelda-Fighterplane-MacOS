@@ -3,8 +3,11 @@
 
 #include <iostream>
 #include <cmath>
+#include <string>
+#include <sstream>
 #include <fstream>
 #include <vector>
+#include <math.h>
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -73,13 +76,37 @@ struct bounding_box_t {
 
 bool detect_collision(bounding_box_t a, bounding_box_t b);
 
+extern float screen_zoom, screen_center_x, screen_center_y, mouse_x_rad, mouse_y_rad;
+extern std::string camera_view;
+extern double ini_cur_x, ini_cur_y;
 extern float screen_zoom, screen_center_x, screen_center_y;
+
 void reset_screen();
+void set_camera_coords(float eye1, float eye2, float eye3, float target1, float target2, float target3, float up1, float up2, float up3);
+void update_camera_coords();
+void gravity();
+void check_above_volcano();
+void missile_spawn();
+int calculate(double x1,double x2,double y1,double y2,double z1,double z2, double r);
+void cursor_pos_callback(GLFWwindow* window, double xpos, double ypos);
 
 // ---- Colors ----
 extern const color_t COLOR_RED;
 extern const color_t COLOR_GREEN;
 extern const color_t COLOR_BLACK;
+extern const color_t COLOR_DARK_SLATE_GRAY;
 extern const color_t COLOR_BACKGROUND;
+extern const color_t COLOR_WHITE;
+extern const color_t COLOR_NAVY;
+extern const color_t COLOR_GRAY;
+extern const color_t COLOR_SEA;
+extern const color_t COLOR_BROWN;
+extern const color_t COLOR_FIRE;
+extern const color_t COLOR_MIDNIGHT_BLUE;
+extern const color_t COLOR_DODGER_BLUE;
+extern const color_t COLOR_DARK_OLIVE_GREEN;
+extern const color_t COLOR_HOT_RED;
+extern const color_t COLOR_GOLD;
+
 
 #endif
