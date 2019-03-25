@@ -1,5 +1,6 @@
 # Zelda Fighterplane
 A 3D fighter plane game  
+The objective is to destroy all the targets in the obstacle course  
 Designed to run on Mac OS   
 
 ## Getting Started
