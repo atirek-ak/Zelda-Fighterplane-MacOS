@@ -1,21 +1,24 @@
-# Zelda Fighterplane
+# Fighter jet
 A 3D fighter plane game  
+Designed to run on Mac OS 
 The objective is to destroy all the targets in the obstacle course  
-Designed to run on Mac OS   
+  
 
 ## Getting Started
 ### Install OpenGL
 You need to install the development packages of the following libraries:  
 * GLEW 
 * GLFW3 
-* GLM
+* GLM  
+
+To do so, run the command:  
 ```brew install glew glfw glm cmake pkg-config```
 
 ### Make instructions: (or directly run this script using ```bash make.sh```)
 - ```mkdir build```
 - ```cd build```
 - ```cmake ../```
-- ```make all -j 4```
+- ```make all -j 4```  
 
 Note - In case of Experimental Error for GLM add ```#define GLM_ENABLE_EXPERIMENTAL``` in the files main.h, nonedit.cpp, other_handlers.cpp, and input.cpp before you include glm.
 
